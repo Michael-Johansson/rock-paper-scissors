@@ -1,4 +1,3 @@
-debugger;
 function getComputerChoice() {
   const computerChoices = ["rock", "paper", "scissors"];
   return computerChoices[Math.trunc(Math.random() * computerChoices.length)];
