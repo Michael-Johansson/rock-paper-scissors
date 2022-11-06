@@ -32,14 +32,6 @@ function playRound(playerSelection, computerSelection) {
   if (playerSelection == computerSelection) {
     return "This match was a tie!";
   }
-
-  if (
-    playerSelection !== "rock" ||
-    playerSelection !== "paper" ||
-    playerSelection !== "scissors"
-  ) {
-    return "That is not a valid pick.";
-  }
 }
 
 function game() {
@@ -64,4 +56,3 @@ function game() {
     }
   }
 }
-game();
