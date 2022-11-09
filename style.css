@@ -23,8 +23,6 @@ body {
   text-align: center;
   height: 800px;
   width: 1300px;
-  border: 1px red solid;
-  border-radius: 15px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -45,10 +43,7 @@ body {
   gap: 50px;
   flex-direction: column;
   text-align: center;
-}
-
-.selection:last-child {
-  font-size: 2rem;
+  font-size: 1.8rem;
 }
 
 .player-buttons {
