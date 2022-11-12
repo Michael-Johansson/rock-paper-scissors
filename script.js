@@ -55,7 +55,8 @@ const restartGame = () => {
 
   setTimeout(() => {
     heading.textContent = "Rock Paper Scissors";
-    heading.style.color = "var(--main-gray)";
+    heading.classList.remove("lose");
+    heading.classList.remove("win");
     playerScore = 0;
     computerScore = 0;
     playerScoreEl.textContent = playerScore;
@@ -86,7 +87,7 @@ function waitForComputer() {
   setTimeout(() => {
     if (playerScore == 3) {
       heading.textContent = "You won the game!";
-      heading.style.color = "#449f5b";
+      heading.classList.add("win");
       disableButtons();
 
       setTimeout(() => {
@@ -94,7 +95,7 @@ function waitForComputer() {
       }, 2000);
     } else if (computerScore == 3) {
       heading.textContent = "You lost the game!";
-      heading.style.color = "#e86363";
+      heading.classList.add("lose");
       disableButtons();
 
       setTimeout(() => {

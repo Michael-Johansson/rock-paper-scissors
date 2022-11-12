@@ -32,6 +32,7 @@ body {
   align-self: center;
   font-size: 3.5rem;
   font-weight: bold;
+  transition: all 0.5s;
 }
 
 .selections {
@@ -124,6 +125,16 @@ img {
   -webkit-transform: translateY(50px);
   transform: translateY(50px);
   transition: all 1.2s ease-in-out;
+}
+
+.win {
+  color: #449f5b;
+  transition: all 0.5s;
+}
+
+.lose {
+  color: #e86363;
+  transition: all 0.5s;
 }
 
 #bottom-tag {
