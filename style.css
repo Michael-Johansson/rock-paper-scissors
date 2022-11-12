@@ -81,7 +81,7 @@ body {
 }
 
 img {
-  width: 200px;
+  width: 130px;
   pointer-events: none;
 }
 
@@ -177,7 +177,7 @@ a:hover::after {
 
 @media screen and (max-width: 600px) {
   img {
-    width: 120px;
+    width: 90px;
     text-align: center;
   }
 
