@@ -11,12 +11,9 @@
     <title>Rock Paper Scissors</title>
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;700&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;400;700&display=swap" rel="stylesheet">
   </head>
   <body>
     <div class="wrapper wrapper-hidden">
@@ -27,7 +24,6 @@
             id="player-choice"
             class="player-hide player-active"
             src="/images/rock.png"
-            alt=""
           />
           <span
             >Your Score<br />
@@ -39,10 +35,9 @@
             id="computer-choice"
             class="computer-hide computer-active"
             src="/images/paper.png"
-            alt=""
           />
           <span
-            >Computer Score<br />
+            >Computer Score<br/>
             <span class="computer-score">0</span></span
           >
         </div>
@@ -52,6 +47,9 @@
         <button class="btn button" id="paper">Paper</button>
         <button class="btn button" id="scissors">Scissors</button>
       </div>
+      <div id="bottom-tag">
+      <p>Made with <div id="heart">❤️</div> by <a href="https://github.com/Michael-Johansson">Michael</a><img id="logo" src="/images/github-icon.png"></p>
+    </div>
     </div>
   </body>
 </html>

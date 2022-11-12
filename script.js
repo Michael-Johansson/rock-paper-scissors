@@ -1,3 +1,4 @@
+"use strict";
 const buttons = document.querySelectorAll(".button");
 const heading = document.querySelector(".heading");
 const playerScoreEl = document.querySelector(".player-score");
@@ -90,7 +91,7 @@ function waitForComputer() {
 
       setTimeout(() => {
         restartGame();
-      }, 1500);
+      }, 2000);
     } else if (computerScore == 3) {
       heading.textContent = "You lost the game!";
       heading.style.color = "#e86363";
@@ -98,7 +99,7 @@ function waitForComputer() {
 
       setTimeout(() => {
         restartGame();
-      }, 1500);
+      }, 2000);
     } else {
       heading.textContent = result;
       enableButtons();
@@ -151,7 +152,6 @@ buttons.forEach((button) => {
   button.addEventListener("click", (e) => {
     const computerSelection = getComputerChoice();
     waitForComputer();
-
     disableButtons();
 
     setTimeout(() => {

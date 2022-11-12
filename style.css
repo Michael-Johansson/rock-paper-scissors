@@ -2,7 +2,7 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-  font-family: "Rajdhani", sans-serif;
+  font-family: "Lexend", sans-serif;
 }
 
 :root {
@@ -21,24 +21,25 @@ body {
 
 .wrapper {
   text-align: center;
-  height: 800px;
+  height: 80vh;
   width: 1300px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   color: var(--main-gray);
-  position: relative;
 }
 
 .heading {
   align-self: center;
   font-size: 3.5rem;
+  font-weight: bold;
 }
 
 .selections {
   display: flex;
   justify-content: space-around;
   overflow: hidden;
+  font-weight: 200;
 }
 
 .selection {
@@ -49,19 +50,20 @@ body {
   font-size: 1.8rem;
 }
 
-.player-score,
-.computer-score {
-  font-weight: bold;
-}
-
 .player-buttons {
   align-self: center;
   display: flex;
   gap: 30px;
 }
 
+.player-score,
+.computer-score {
+  font-weight: bold;
+}
+
 .btn {
-  font-size: 2rem;
+  font-size: 1.7rem;
+  font-weight: 200;
   width: 120px;
   height: 50px;
   border-radius: 5px;
@@ -76,7 +78,7 @@ body {
   background-color: var(--main-gray);
   color: var(--white);
   box-shadow: 0px 1px 5px 1px #c7c7c7;
-  transition: all ease-in-out 250ms;
+  transition: all ease-in-out 200ms;
 }
 
 img {
@@ -120,6 +122,55 @@ img {
   transition: all 1.2s ease-in-out;
 }
 
+#bottom-tag {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  font-size: 1.2rem;
+}
+
+#heart {
+  animation: heartbeat 0.5s infinite alternate;
+}
+
+@keyframes heartbeat {
+  to {
+    transform: scale(1.4);
+  }
+}
+
+a {
+  color: inherit;
+  transition: all 300ms;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0.1em;
+  background-color: #f8312f;
+  opacity: 0;
+  transition: opacity 200ms, transform 400ms;
+  transform: scale(0);
+}
+
+a:hover::after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+#logo {
+  margin-top: 2px;
+  width: 20px;
+  height: 20px;
+}
+
 @media screen and (max-width: 600px) {
   img {
     width: 120px;
@@ -128,11 +179,12 @@ img {
 
   .selection {
     align-items: center;
+    font-size: 1.5rem;
   }
 
   .btn {
-    width: 100px;
-    font-size: 1.6rem;
+    width: 90px;
+    font-size: 1.3rem;
   }
 
   .player-buttons {
@@ -142,10 +194,31 @@ img {
   }
 
   .heading {
-    font-size: 2.5rem;
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-height: 420px) {
+  .heading {
+    font-size: 1.5rem;
+  }
+  img {
+    width: 110px;
   }
 
   .selection {
-    font-size: 1.6rem;
+    font-size: 1.3rem;
+    align-items: center;
+    gap: 25px;
+  }
+
+  .btn {
+    width: 100px;
+    height: 40px;
+    font-size: 1.5rem;
+  }
+
+  #bottom-tag {
+    display: none;
   }
 }
