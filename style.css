@@ -48,6 +48,7 @@ body {
   flex-direction: column;
   text-align: center;
   font-size: 1.8rem;
+  align-items: center;
 }
 
 .player-buttons {
@@ -89,7 +90,7 @@ img {
 .computer-hide {
   -webkit-transform: translateX(250px);
   transform: translateX(250px);
-  transition: all 200ms ease-in-out;
+  transition: all 0.6s ease-in-out;
   opacity: 0;
 }
 
@@ -97,20 +98,20 @@ img {
   opacity: 1;
   -webkit-transform: translateX(0px);
   transform: translateX(0px);
-  transition: all 200ms ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .player-hide {
   -webkit-transform: translateX(-250px);
   transform: translateX(-250px);
-  transition: all 200ms ease-in-out;
+  transition: all 0.6s ease-in-out;
   opacity: 0;
 }
 
 .player-active {
   -webkit-transform: translateX(0px);
   transform: translateX(0px);
-  transition: all 200ms ease-in-out;
+  transition: all 0.2s ease-in-out;
   opacity: 1;
 }
 
@@ -129,12 +130,12 @@ img {
 
 .win {
   color: #449f5b;
-  transition: all 0.5s;
+  transition: all 0.3s;
 }
 
 .lose {
   color: #e86363;
-  transition: all 0.5s;
+  transition: all 0.3s;
 }
 
 #bottom-tag {
