@@ -5,15 +5,15 @@ const playerScoreEl = document.querySelector(".player-score");
 const computerScoreEl = document.querySelector(".computer-score");
 const playerChoice = document.querySelector("#player-choice");
 const computerChoice = document.querySelector("#computer-choice");
-const wrapper = document.querySelector(".wrapper");
+const container = document.querySelector(".container");
 let playerScore = 0;
 let computerScore = 0;
 let result = "";
 
-// Animating the wrapper when document has loaded
+// Animating the container when document has loaded
 window.onload = () => {
-  wrapper.classList.add("wrapper-fade-in");
-  wrapper.classList.remove("wrapper-hidden");
+  container.classList.add("container-fade-in");
+  container.classList.remove("container-hidden");
 };
 
 const playerWin = () => {
@@ -159,10 +159,10 @@ buttons.forEach((button) => {
     const computerSelection = getComputerChoice();
     waitForComputer();
     disableButtons();
+    playAnimation();
 
     setTimeout(() => {
       playRound(e.target.id, computerSelection);
     }, 1000);
-    playAnimation();
   });
 });

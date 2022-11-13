@@ -18,7 +18,7 @@ body {
   align-items: center;
 }
 
-.wrapper {
+.container {
   text-align: center;
   height: 80vh;
   width: 1300px;
@@ -115,12 +115,12 @@ img {
   opacity: 1;
 }
 
-.wrapper-fade-in {
+.container-fade-in {
   opacity: 1;
   transition: all 1s ease-in-out;
 }
 
-.wrapper-hidden {
+.container-hidden {
   filter: blur(2px);
   opacity: 0;
   -webkit-transform: translateY(50px);
