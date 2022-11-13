@@ -72,9 +72,7 @@ function getComputerChoice() {
 
 // Counts down then shows the round results, also checking if anyone won the game
 function waitForComputer() {
-  setTimeout(() => {
-    heading.textContent = "3";
-  }, 0);
+  heading.textContent = "3";
 
   setTimeout(() => {
     heading.textContent = "2";
@@ -85,29 +83,36 @@ function waitForComputer() {
   }, 1600);
 
   setTimeout(() => {
-    if (playerScore == 3) {
-      heading.textContent = "You won the game!";
-      heading.classList.add("win");
-      disableButtons();
-
-      setTimeout(() => {
-        restartGame();
-      }, 2000);
-    } else if (computerScore == 3) {
-      heading.textContent = "You lost the game!";
-      heading.classList.add("lose");
-      disableButtons();
-
-      setTimeout(() => {
-        restartGame();
-      }, 2000);
-    } else {
-      heading.textContent = result;
-      enableButtons();
-    }
-    playerScoreEl.textContent = playerScore;
-    computerScoreEl.textContent = computerScore;
     playAnimation();
+
+    if (playerScore == 3) {
+      disableButtons();
+      setTimeout(() => {
+        heading.textContent = "You won the game!";
+        heading.classList.add("win");
+      }, 100);
+
+      setTimeout(() => {
+        restartGame();
+      }, 2200);
+    } else if (computerScore == 3) {
+      disableButtons();
+      setTimeout(() => {
+        heading.textContent = "You lost the game!";
+        heading.classList.add("lose");
+      }, 100);
+
+      setTimeout(() => {
+        restartGame();
+      }, 2200);
+    } else {
+      setTimeout(() => {
+        enableButtons();
+        heading.textContent = result;
+        playerScoreEl.textContent = playerScore;
+        computerScoreEl.textContent = computerScore;
+      }, 100);
+    }
   }, 2400);
 }
 
