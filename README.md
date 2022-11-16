@@ -1,9 +1,16 @@
-# rock-paper-scissors
+# Rock Paper Scissors!
 
-My first project!
+Assignment was to create a **Rock Paper Scissors** game with HTML, CSS and JS.
 
-This started as a game you could only play in the console, but now featuring a simple and responsive UI!
+**Check it out** [here](https://michael-johansson.github.io/rock-paper-scissors/)
 
-There are some additional features in this project that we have not yet learned about in the curriculum, animations, mobile responsiveness, timing events.
+## What I learned
 
-On my quest to implement these features i had alot of fun, and i learned alot. I'm looking forward to learn more about these topics later!
+* Better understanding of **JavaScript** fundamentals.
+* The importance of a **code structure** and **code readability**.
+* A lot of minor things!
+
+## What could be improved
+
+* Cleaner code.
+* My commit messages are still terrible.
