@@ -88,6 +88,8 @@ function waitForComputer() {
     if (playerScore == 3) {
       disableButtons();
       setTimeout(() => {
+        playerScoreEl.textContent = playerScore;
+        computerScoreEl.textContent = computerScore;
         heading.textContent = "You won the game!";
         heading.classList.add("win");
       }, 100);
@@ -98,6 +100,8 @@ function waitForComputer() {
     } else if (computerScore == 3) {
       disableButtons();
       setTimeout(() => {
+        playerScoreEl.textContent = playerScore;
+        computerScoreEl.textContent = computerScore;
         heading.textContent = "You lost the game!";
         heading.classList.add("lose");
       }, 100);
