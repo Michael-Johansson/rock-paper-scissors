@@ -2,12 +2,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   color: var(--main-color);
 }
 
 body {
-  background: linear-gradient(#fff, #D9D9D9);
+  background: linear-gradient(#fff, #d9d9d9);
+  width: 100vw;
   height: 100vh;
 }
 
@@ -18,22 +19,23 @@ body {
 .wrapper {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
+  max-width: 960px;
   height: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
+  margin: auto;
   gap: 100px;
 }
 
 .heading {
-font-size: 48px;
-margin-top: 350px;
-font-weight: 900;
+  font-size: 48px;
+  font-weight: 900;
+  text-align: center;
 }
 
 .card-container {
   display: flex;
-  width: 800px;
+  width: 100%;
   justify-content: space-around;
   text-align: center;
   font-size: 18px;
