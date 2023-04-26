@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rock Paper Scissors</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="game.js" defer></script>
+</head>
+<body>
+  <div class="wrapper">
+    <h1 class="heading">Rock Paper Scissors</h1>
+    <div class="card-container">
+    <div class="player card">
+      <img src="images/paper.svg" alt="Player selection">
+      <p><strong>You</strong></p>
+      <p>Score: <span class="player-score"><strong>0</strong></span></p>
+    </div>
+    <div class="computer card">
+      <img src="images/paper.svg" alt="Computer selection">
+      <p><strong>Computer</strong></p>
+      <p>Score: <span class="computer-score"><strong></span>0</strong></p>
+    </div>
+  </div>
+    <p>Round: <span class="current-round">0</span></p>
+    <div class="buttons">
+      <button class="btn">Rock</button>
+      <button class="btn">Paper</button>
+      <button class="btn">Scissors</button>
+    </div>
+  </div>
+</body>
+</html>
