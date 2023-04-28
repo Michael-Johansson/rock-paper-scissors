@@ -32,6 +32,7 @@ body {
   font-weight: 900;
   text-align: center;
   padding-bottom: 100px;
+  transition: all 0.2s ease-in-out;
 }
 
 .card-container {
@@ -45,10 +46,59 @@ body {
 .card {
   display: flex;
   flex-direction: column;
+  letter-spacing: 1px;
 }
 
 img {
   margin-bottom: 40px;
   height: 130px;
   width: 130px;
+  pointer-events: none;
+}
+
+.computer-score, .player-score {
+  font-weight: bold;
+}
+
+.btn {
+  border: 1px solid var(--main-color);
+  height: 40px;
+  width: 80px;
+  font-size: 16px;
+  font-weight: bolder;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 5px 0 #adadad;
+  background-color: white;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.lost {
+  color: #ce4d4d;
+  transition: all 0.2s ease-in-out;
+}
+
+.won {
+  color: #329f48;
+  transition: all 0.2s ease-in-out;
+}
+
+.computer-fade-out {
+  transform: translateX(60px);
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+}
+
+.player-fade-out {
+  transform: translateX(-60px);
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+}
+
+.player-selection, .computer-selection {
+  transition: all 0.3s ease-in-out;
 }

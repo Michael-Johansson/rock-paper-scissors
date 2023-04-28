@@ -21,16 +21,22 @@ function computerSelection() {
 function changeSvg (player, computer) {
   playerChoice.src = `images/${player}.svg`;
   computerChoice.src = `images/${computer}.svg`;
+  computerChoice.classList.toggle("computer-fade-out");
+  playerChoice.classList.toggle("player-fade-out");
 }
 
 function playerWin () {
   heading.textContent = "You won!";
+  heading.classList.remove("lost");
+  heading.classList.add("won");
   playerCurrentScore++;
   playerScore.textContent = playerCurrentScore;
 }
 
 function computerWin () {
   heading.textContent = "You lost!";
+  heading.classList.remove("won");
+  heading.classList.add("lost");
   computerCurrentScore++;
   computerScore.textContent = computerCurrentScore;
 }
@@ -55,7 +61,9 @@ function playRound (playerSelection, computerSelection) {
     computerWin();
   }
   else if (playerSelection == computerSelection) {
-    heading.textContent = "Tie!"
+    heading.textContent = "Tie!";
+    heading.classList.remove("lost");
+    heading.classList.remove("won");
   }
   changeSvg(playerSelection, computerSelection);
   currentRound++
@@ -64,14 +72,35 @@ function playRound (playerSelection, computerSelection) {
   console.log(playerCurrentScore);
 }
 
+function countdown () {
+  heading.textContent = "3";
+
+  setTimeout(() => {
+    heading.textContent = "2";
+  }, 1000);
+
+  setTimeout(() => {
+    heading.textContent = "1";
+  }, 2000);
+}
+
 rockBtn.addEventListener("click", () => {
-  playRound("rock", computerSelection());
+  countdown();
+  setTimeout(() => {
+    playRound("rock", computerSelection());
+  }, 3000);
 })
 
 paperBtn.addEventListener("click", () => {
-  playRound("paper", computerSelection());
+  countdown();
+  setTimeout(() => {
+    playRound("paper", computerSelection());
+  }, 3000);
 })
 
 scissorsBtn.addEventListener("click", () => {
-  playRound("scissors", computerSelection());
+  countdown();
+  setTimeout(() => {
+    playRound("scissors", computerSelection());
+  }, 3000);
 })
