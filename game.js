@@ -2,11 +2,14 @@
 
 const heading = document.querySelector(".heading");
 const playerScore = document.querySelector(".player-score");
+let playerCurrentScore = 0;
 const playerChoice = document.querySelector(".player-selection");
 const computerChoices = ["rock", "paper", "scissors"];
 const computerChoice = document.querySelector(".computer-selection");
 const computerScore = document.querySelector(".computer-score");
-const currentRound = document.querySelector(".current-round");
+let computerCurrentScore = 0;
+const gameRound = document.querySelector(".current-round");
+let currentRound = 0;
 const rockBtn = document.querySelector("#rock");
 const paperBtn = document.querySelector("#paper");
 const scissorsBtn = document.querySelector("#scissors");
@@ -20,30 +23,45 @@ function changeSvg (player, computer) {
   computerChoice.src = `images/${computer}.svg`;
 }
 
+function playerWin () {
+  heading.textContent = "You won!";
+  playerCurrentScore++;
+  playerScore.textContent = playerCurrentScore;
+}
+
+function computerWin () {
+  heading.textContent = "You lost!";
+  computerCurrentScore++;
+  computerScore.textContent = computerCurrentScore;
+}
+
 function playRound (playerSelection, computerSelection) {
   if (playerSelection == "rock" && computerSelection == "paper") {
-    heading.textContent = "You lost!";
+    computerWin();
   }
   if (playerSelection == "rock" && computerSelection == "scissors") {
-    heading.textContent = "You won!";
+    playerWin();
   }
   if (playerSelection == "paper" && computerSelection == "rock") {
-    heading.textContent = "You won!";
+    playerWin();
   }
   if (playerSelection == "paper" && computerSelection == "scissors") {
-    heading.textContent = "You lost";
+    computerWin();
   }
   if (playerSelection == "scissors" && computerSelection == "paper") {
-    heading.textContent = "You won";
+    playerWin();
   }
   if (playerSelection == "scissors" && computerSelection == "rock") {
-    heading.textContent = "You lost";
+    computerWin();
   }
   else if (playerSelection == computerSelection) {
     heading.textContent = "Tie!"
   }
   changeSvg(playerSelection, computerSelection);
+  currentRound++
+  gameRound.textContent = currentRound;
   console.log(playerSelection, computerSelection);
+  console.log(playerCurrentScore);
 }
 
 rockBtn.addEventListener("click", () => {
