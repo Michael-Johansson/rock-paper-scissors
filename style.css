@@ -56,7 +56,8 @@ img {
   pointer-events: none;
 }
 
-.computer-score, .player-score {
+.computer-score,
+.player-score {
   font-weight: bold;
 }
 
@@ -99,6 +100,7 @@ img {
   opacity: 0;
 }
 
-.player-selection, .computer-selection {
+.player-selection,
+.computer-selection {
   transition: all 0.3s ease-in-out;
 }

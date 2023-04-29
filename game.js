@@ -16,15 +16,15 @@ const scissorsBtn = document.querySelector("#scissors");
 const buttons = document.querySelectorAll("button");
 
 function computerSelection() {
-  return computerChoices[Math.round(Math.random() *2)];
+  return computerChoices[Math.round(Math.random() * 2)];
 }
 
-function changeSvg (player, computer) {
+function changeSvg(player, computer) {
   playerChoice.src = `images/${player}.svg`;
   computerChoice.src = `images/${computer}.svg`;
 }
 
-function playerWin () {
+function playerWin() {
   heading.textContent = "You won!";
   heading.classList.remove("lost");
   heading.classList.add("won");
@@ -32,7 +32,7 @@ function playerWin () {
   playerScore.textContent = playerCurrentScore;
 }
 
-function computerWin () {
+function computerWin() {
   heading.textContent = "You lost!";
   heading.classList.remove("won");
   heading.classList.add("lost");
@@ -40,26 +40,26 @@ function computerWin () {
   computerScore.textContent = computerCurrentScore;
 }
 
-function toggleFade () {
+function toggleFade() {
   computerChoice.classList.toggle("computer-fade-out");
   playerChoice.classList.toggle("player-fade-out");
   heading.classList.remove("lost");
   heading.classList.remove("won");
 }
 
-function disableButtons () {
+function disableButtons() {
   buttons.forEach((button) => {
     button.disabled = true;
-  })
-  }
+  });
+}
 
-  function enableButtons () {
-    buttons.forEach((button) => {
-      button.disabled = false;
-    })
-  }
+function enableButtons() {
+  buttons.forEach((button) => {
+    button.disabled = false;
+  });
+}
 
-function playRound (playerSelection, computerSelection) {
+function playRound(playerSelection, computerSelection) {
   if (playerSelection == "rock" && computerSelection == "paper") {
     computerWin();
   }
@@ -77,20 +77,19 @@ function playRound (playerSelection, computerSelection) {
   }
   if (playerSelection == "scissors" && computerSelection == "rock") {
     computerWin();
-  }
-  else if (playerSelection == computerSelection) {
+  } else if (playerSelection == computerSelection) {
     heading.textContent = "Tie!";
     heading.classList.remove("lost");
     heading.classList.remove("won");
   }
   changeSvg(playerSelection, computerSelection);
-  currentRound++
+  currentRound++;
   gameRound.textContent = currentRound;
   console.log(playerSelection, computerSelection);
   console.log(playerCurrentScore);
 }
 
-function countdown () {
+function countdown() {
   heading.textContent = "3";
 
   setTimeout(() => {
@@ -114,7 +113,7 @@ rockBtn.addEventListener("click", () => {
   setTimeout(() => {
     playRound("rock", computerSelection());
   }, 3000);
-})
+});
 
 paperBtn.addEventListener("click", () => {
   disableButtons();
@@ -123,7 +122,7 @@ paperBtn.addEventListener("click", () => {
   setTimeout(() => {
     playRound("paper", computerSelection());
   }, 3000);
-})
+});
 
 scissorsBtn.addEventListener("click", () => {
   disableButtons();
@@ -132,6 +131,6 @@ scissorsBtn.addEventListener("click", () => {
   setTimeout(() => {
     playRound("scissors", computerSelection());
   }, 3000);
-})
+});
 
 console.log(buttons);
