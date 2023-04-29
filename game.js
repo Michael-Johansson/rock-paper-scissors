@@ -13,6 +13,7 @@ let currentRound = 0;
 const rockBtn = document.querySelector("#rock");
 const paperBtn = document.querySelector("#paper");
 const scissorsBtn = document.querySelector("#scissors");
+const buttons = document.querySelectorAll("button");
 
 function computerSelection() {
   return computerChoices[Math.round(Math.random() *2)];
@@ -21,8 +22,6 @@ function computerSelection() {
 function changeSvg (player, computer) {
   playerChoice.src = `images/${player}.svg`;
   computerChoice.src = `images/${computer}.svg`;
-  computerChoice.classList.toggle("computer-fade-out");
-  playerChoice.classList.toggle("player-fade-out");
 }
 
 function playerWin () {
@@ -40,6 +39,25 @@ function computerWin () {
   computerCurrentScore++;
   computerScore.textContent = computerCurrentScore;
 }
+
+function toggleFade () {
+  computerChoice.classList.toggle("computer-fade-out");
+  playerChoice.classList.toggle("player-fade-out");
+  heading.classList.remove("lost");
+  heading.classList.remove("won");
+}
+
+function disableButtons () {
+  buttons.forEach((button) => {
+    button.disabled = true;
+  })
+  }
+
+  function enableButtons () {
+    buttons.forEach((button) => {
+      button.disabled = false;
+    })
+  }
 
 function playRound (playerSelection, computerSelection) {
   if (playerSelection == "rock" && computerSelection == "paper") {
@@ -82,9 +100,16 @@ function countdown () {
   setTimeout(() => {
     heading.textContent = "1";
   }, 2000);
+
+  setTimeout(() => {
+    toggleFade();
+    enableButtons();
+  }, 3000);
 }
 
 rockBtn.addEventListener("click", () => {
+  disableButtons();
+  toggleFade();
   countdown();
   setTimeout(() => {
     playRound("rock", computerSelection());
@@ -92,6 +117,8 @@ rockBtn.addEventListener("click", () => {
 })
 
 paperBtn.addEventListener("click", () => {
+  disableButtons();
+  toggleFade();
   countdown();
   setTimeout(() => {
     playRound("paper", computerSelection());
@@ -99,8 +126,12 @@ paperBtn.addEventListener("click", () => {
 })
 
 scissorsBtn.addEventListener("click", () => {
+  disableButtons();
+  toggleFade();
   countdown();
   setTimeout(() => {
     playRound("scissors", computerSelection());
   }, 3000);
 })
+
+console.log(buttons);
