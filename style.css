@@ -61,6 +61,15 @@ img {
   font-weight: bold;
 }
 
+.game-round {
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+.button-container {
+  position: relative;
+}
+
 .btn {
   border: 1px solid var(--main-color);
   height: 40px;
@@ -76,6 +85,10 @@ img {
   background-color: white;
   transition: all 0.2s ease-in-out;
   cursor: pointer;
+}
+
+#restart-btn {
+  display: none;
 }
 
 .lost {

@@ -13,6 +13,8 @@ let currentRound = 0;
 const rockBtn = document.querySelector("#rock");
 const paperBtn = document.querySelector("#paper");
 const scissorsBtn = document.querySelector("#scissors");
+const restartButton = document.querySelector("#restart-btn");
+const buttonContainer = document.querySelector(".button-container");
 const buttons = document.querySelectorAll("button");
 
 function computerSelection() {
@@ -59,6 +61,29 @@ function enableButtons() {
   });
 }
 
+function updateGameRound() {
+  currentRound++;
+  gameRound.textContent = currentRound;
+}
+
+function restartGame() {
+  currentRound = 0;
+  gameRound.textContent = currentRound;
+  playerCurrentScore = 0;
+  playerScore.textContent = playerCurrentScore;
+  computerCurrentScore = 0;
+  computerScore.textContent = computerCurrentScore;
+
+  playerChoice.src = "images/question-mark.svg";
+  computerChoice.src = "images/question-mark.svg"
+
+  buttonContainer.style.display = "block";
+  restartButton.style.display = "none";
+  heading.textContent = "Rock Paper Scissors";
+  heading.classList.remove("won");
+  heading.classList.remove("lost");
+}
+
 function playRound(playerSelection, computerSelection) {
   if (playerSelection == "rock" && computerSelection == "paper") {
     computerWin();
@@ -82,11 +107,14 @@ function playRound(playerSelection, computerSelection) {
     heading.classList.remove("lost");
     heading.classList.remove("won");
   }
+
   changeSvg(playerSelection, computerSelection);
-  currentRound++;
-  gameRound.textContent = currentRound;
-  console.log(playerSelection, computerSelection);
-  console.log(playerCurrentScore);
+
+  if (playerCurrentScore >= 3 || computerCurrentScore >= 3) {
+    heading.textContent = "Game is finished!";
+    buttonContainer.style.display = "none";
+    restartButton.style.display = "block";
+  }
 }
 
 function countdown() {
@@ -107,6 +135,7 @@ function countdown() {
 }
 
 rockBtn.addEventListener("click", () => {
+  updateGameRound();
   disableButtons();
   toggleFade();
   countdown();
@@ -116,6 +145,7 @@ rockBtn.addEventListener("click", () => {
 });
 
 paperBtn.addEventListener("click", () => {
+  updateGameRound();
   disableButtons();
   toggleFade();
   countdown();
@@ -125,6 +155,7 @@ paperBtn.addEventListener("click", () => {
 });
 
 scissorsBtn.addEventListener("click", () => {
+  updateGameRound();
   disableButtons();
   toggleFade();
   countdown();
@@ -133,4 +164,4 @@ scissorsBtn.addEventListener("click", () => {
   }, 3000);
 });
 
-console.log(buttons);
+restartButton.addEventListener("click", restartGame);
