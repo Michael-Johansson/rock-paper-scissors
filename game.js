@@ -75,7 +75,7 @@ function restartGame() {
   computerScore.textContent = computerCurrentScore;
 
   playerChoice.src = "images/question-mark.svg";
-  computerChoice.src = "images/question-mark.svg"
+  computerChoice.src = "images/question-mark.svg";
 
   buttonContainer.style.display = "block";
   restartButton.style.display = "none";
