@@ -110,8 +110,15 @@ function playRound(playerSelection, computerSelection) {
 
   changeSvg(playerSelection, computerSelection);
 
-  if (playerCurrentScore >= 3 || computerCurrentScore >= 3) {
-    heading.textContent = "Game is finished!";
+  if (playerCurrentScore >= 3) {
+    heading.textContent = "You won the game!";
+    heading.classList.add("won");
+    buttonContainer.style.display = "none";
+    restartButton.style.display = "block";
+  }
+  if (computerCurrentScore >= 3) {
+    heading.textContent = "You lost the game!";
+    heading.classList.add("lost");
     buttonContainer.style.display = "none";
     restartButton.style.display = "block";
   }
